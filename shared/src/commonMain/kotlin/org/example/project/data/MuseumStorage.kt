@@ -1,5 +1,6 @@
 package org.example.project.data
 
+import dev.zacsweers.metro.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
@@ -12,6 +13,7 @@ interface MuseumStorage {
     fun getObjects(): Flow<List<MuseumObject>>
 }
 
+@Inject
 class InMemoryMuseumStorage : MuseumStorage {
     private val storedObjects = MutableStateFlow(emptyList<MuseumObject>())
 

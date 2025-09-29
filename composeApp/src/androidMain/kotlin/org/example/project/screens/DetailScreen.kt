@@ -36,14 +36,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
+import org.example.project.viewmodel.metroViewModel
 import org.example.project.R
 import org.example.project.data.MuseumObject
 
 @Composable
 fun DetailScreen(objectId: Int, navigateBack: () -> Unit) {
-    val viewModel: DetailViewModel = viewModel() // TODO: Inject
+    val viewModel = metroViewModel<DetailViewModel>()
     val obj by viewModel.museumObject.collectAsStateWithLifecycle()
 
     LaunchedEffect(objectId) {

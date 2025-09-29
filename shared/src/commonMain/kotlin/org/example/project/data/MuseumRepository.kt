@@ -1,14 +1,16 @@
 package org.example.project.data
 
+import dev.zacsweers.metro.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
+@Inject
 class MuseumRepository(
     private val museumApi: MuseumApi,
     private val museumStorage: MuseumStorage,
-    ) {
+) {
     private val scope = CoroutineScope(SupervisorJob())
 
     fun initialize() {

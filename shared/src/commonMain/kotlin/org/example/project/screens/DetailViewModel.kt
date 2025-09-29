@@ -2,6 +2,10 @@ package org.example.project.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.jetbrains.kmpapp.di.ViewModelKey
+import com.jetbrains.kmpapp.di.ViewModelScope
+import dev.zacsweers.metro.ContributesIntoMap
+import dev.zacsweers.metro.Inject
 import org.example.project.data.MuseumObject
 import org.example.project.data.MuseumRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -12,6 +16,9 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.stateIn
 
+@ContributesIntoMap(ViewModelScope::class)
+@ViewModelKey(DetailViewModel::class)
+@Inject
 class DetailViewModel(private val museumRepository: MuseumRepository) : ViewModel() {
 
     init {

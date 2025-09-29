@@ -25,13 +25,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
+import org.example.project.viewmodel.metroViewModel
 import org.example.project.data.MuseumObject
 
 @Composable
 fun ListScreen(navigateToDetails: (objectId: Int) -> Unit) {
-    val viewModel: ListViewModel = viewModel() // TODO: Inject
+    val viewModel = metroViewModel<ListViewModel>()
     val objects by viewModel.objects.collectAsStateWithLifecycle()
 
     AnimatedContent(objects.isNotEmpty()) { objectsAvailable ->

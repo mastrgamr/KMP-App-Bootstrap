@@ -1,5 +1,8 @@
 This is a Kotlin Multiplatform project targeting Android, iOS.
 
+Checkout the article [Metro: The KMP DI Framework You Never Knew You Needed](https://medium.com/@stuart_/metro-the-kmp-di-framework-you-never-knew-you-needed-f77c8ee5d226) for more details on how to set up your environment and run the project.
+The article is based on the `metro-sample` branch of this repository.
+
 * [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
   - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
